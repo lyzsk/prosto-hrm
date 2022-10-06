@@ -165,7 +165,7 @@ basic Create, Read, Update, Delete features for mangaging the data, including:
 
 ### Preview
 
--   add new employee:
+-   add new employee with input content format checker:
 
     ![preview][preview-01]
 
@@ -173,10 +173,10 @@ basic Create, Read, Update, Delete features for mangaging the data, including:
 
 1. Login with password and verifycode. Implement random verifycode generator.
 2. Auto kick-offline when user login in another terminal.
-3. Add salt to user password before storing in database to protect user information.
+3. Add salt to encoded user password to protect user information.
 4. Save login status after login, avoid losing data after refresh (F5).
 
-The key technology of this module is using `SpringSecurity`, `Filter`, `Vuex.Store` and `awt.Graphics` to implement.
+The key technologies of these features are using `SpringSecurity`, `Filter`, `Vuex.Store` and `awt.Graphics` to implement.
 
 ### Preview
 
@@ -189,12 +189,13 @@ The key technology of this module is using `SpringSecurity`, `Filter`, `Vuex.Sto
 1. Allows HR to import employee excel table from local disk and update MySQL database.
 2. Allows HR to export employee excel table from MySQL database into local disk.
 3. Allow key words search and fuzzy search for employees in web content.
+4. Allow using advanced search using filters.
 
-The key technology of this module is using `apache.POI` and `axios` to implement.
+The key technologies of these features are using `apache.POI` and `axios` to implement.
 
 ### Preview
 
--   export excel:
+-   export excel, key words search, search with filters:
 
     ![preview][preview-03]
 
@@ -205,11 +206,11 @@ The key technology of this module is using `apache.POI` and `axios` to implement
 3. notification when receive message.
 4. Save chat data with `Vuex.Store.localStorage`, avoid losing data after refresh (F5).
 
-The key technology of this module is using `WebSocket` to implement.
+The key technology of these features are using `WebSocket` to implement.
 
 ### Preview
 
--   one-to-one chat
+-   one-to-one chat:
 
     ![preview][preview-04]
 
@@ -220,18 +221,20 @@ The key technology of this module is using `WebSocket` to implement.
 3. Allow user to set new icon.
 4. All the settings include files will using FastDFS to upload into nginx server (default `http://192.168.91.128/`).
 
-The key technology of this module is using `FastDFS` to implement.
+The key technology of these features are using `FastDFS` to implement.
 
 ### Preview
 
--   ![preview][preview-05]
+-   User setting, update password:
+
+    ![preview][preview-05]
 
 ## Menu Caching and Dynamic loading components
 
 1. Enable redis caching for menu beacause this is the main entrence of every features and will being load many times.
 2. Apply Dynamic Loading to components to improve the performance.
 
-The key technology of this module is using `Redis` and `Global Before Guards` to implement.
+The key technologies of these features are using `Redis` and `Global Before Guards` to implement.
 
 ### Preview
 
@@ -243,7 +246,7 @@ The key technology of this module is using `Redis` and `Global Before Guards` to
 
 1. Auto send email to new employee after being added.
 
-The key technology of this module is using `thymeleaf`, `Redis` and `RabbitMQ` to implement.
+The key technologies of these features are using `thymeleaf`, `Redis` and `RabbitMQ` to implement.
 
 ### Preview
 
@@ -255,7 +258,7 @@ The key technology of this module is using `thymeleaf`, `Redis` and `RabbitMQ` t
 
 > More features you can run the project and discover by yourself.💖
 >
-> Or see the hrms project previews in my support-repo: C:\Users\sichu\dev\support-repo\human-resource-management-system\previews
+> Or see the hrms project previews in my support-repo: https://github.com/lyzsk/support-repo/tree/master/human-resource-management-system/previews
 
 # TODO
 
