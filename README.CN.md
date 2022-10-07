@@ -256,14 +256,15 @@ The key technology of this module is using `SpringSecurity`, `Filter`, `Vuex.Sto
 -   Fix email bugs
 -   replace Mybatis with Hibernate.
 
+[back to top]: #introduction
 [hrms]: ./hrms
 [hrms-vue]: ./hrms-vue
 [basic crud]: #basic-crud
-[login module]: #login-module
-[excel management]: #excel-management
-[online chat]: #online-chat
-[account setting]: #account-setting
-[menu caching and dynamic loading components]: #menu-caching-and-dynamic-loading-components
+[login module with springsecurity]: #login-module-with-springsecurity
+[excel management with poi and axios]: #excel-management-with-poi-and-axios
+[online chat with websocket]: #online-chat-with-websocket
+[account setting with fastdfs file upload]: #account-setting-with-fastdfs-file-upload
+[menu caching with redis and vue dynamic loading components]: #menu-caching-with-redis-and-vue-dynamic-loading-components
 [email module with redis and rabbitmq]: #email-module-with-redis-and-rabbitmq
 [preview-01]: https://github.com/lyzsk/support-repo/blob/master/human-resource-management-system/previews/add-new-employee.gif?raw=true
 [preview-02]: https://github.com/lyzsk/support-repo/blob/master/human-resource-management-system/previews/login-with-password-and-verifycode.gif?raw=true

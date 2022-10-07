@@ -51,15 +51,15 @@ This project include two sub-projects:
 
     -   [Basic CRUD]
         -   [preview](#preview)
-    -   [Login module]
+    -   [Login module with SpringSecurity]
         -   [preview](#preview-1)
-    -   [Excel management]
+    -   [Excel management with POI and axios]
         -   [preview](#preview-2)
-    -   [Online chat]
+    -   [Online chat with Websocket]
         -   [preview](#preview-3)
-    -   [Account setting]
+    -   [Account setting with FastDFS file upload]
         -   [preview](#preview-4)
-    -   [Menu caching and Dynamic loading components]
+    -   [Menu caching with Redis and Vue dynamic loading components]
         -   [preview](#preview-5)
     -   [Email module with Redis and RabbitMQ]
         -   [preview](#preview-6)
@@ -123,15 +123,15 @@ This project include two sub-projects:
 
 # Key features
 
-|  #  |                 feature name                  |        preview        |               |
-| :-: | :-------------------------------------------: | :-------------------: | :-----------: |
-|  1  |                 [Basic CRUD]                  |  [preview](#preview)  | [back to top] |
-|  2  |                [Login module]                 | [preview](#preview-1) | [back to top] |
-|  3  |              [Excel management]               | [preview](#preview-2) | [back to top] |
-|  4  |                 [Online chat]                 | [preview](#preview-3) | [back to top] |
-|  5  |               [Account setting]               | [preview](#preview-4) | [back to top] |
-|  6  | [Menu Caching and Dynamic loading components] | [preview](#preview-5) | [back to top] |
-|  7  |    [Email module with Redis and RabbitMQ]     | [preview](#preview-6) | [back to top] |
+|  #  |                         feature name                         |        preview        |               |
+| :-: | :----------------------------------------------------------: | :-------------------: | :-----------: |
+|  1  |                         [Basic CRUD]                         |  [preview](#preview)  | [back to top] |
+|  2  |              [Login module with SpringSecurity]              | [preview](#preview-1) | [back to top] |
+|  3  |            [Excel management with POI and axios]             | [preview](#preview-2) | [back to top] |
+|  4  |                 [Online chat with Websocket]                 | [preview](#preview-3) | [back to top] |
+|  5  |          [Account setting with FastDFS file upload]          | [preview](#preview-4) | [back to top] |
+|  6  | [Menu caching with Redis and Vue dynamic loading components] | [preview](#preview-5) | [back to top] |
+|  7  |            [Email module with Redis and RabbitMQ]            | [preview](#preview-6) | [back to top] |
 
 > NOTE: More Details about implementation of the features
 >
@@ -169,7 +169,7 @@ basic Create, Read, Update, Delete features for mangaging the data, including:
 
     ![preview][preview-01]
 
-## Login module
+## Login module with SpringSecurity
 
 1. Login with password and verifycode. Implement random verifycode generator.
 2. Auto kick-offline when user login in another terminal.
@@ -184,7 +184,7 @@ The key technologies of these features are using `SpringSecurity`, `Filter`, `Vu
 
     ![preview][preview-02]
 
-## Excel management
+## Excel management with POI and axios
 
 1. Allows HR to import employee excel table from local disk and update MySQL database.
 2. Allows HR to export employee excel table from MySQL database into local disk.
@@ -199,7 +199,7 @@ The key technologies of these features are using `apache.POI` and `axios` to imp
 
     ![preview][preview-03]
 
-## Online chat
+## Online chat with Websocket
 
 1. one-to-one chat with another HR.
 2. group chat with HRs.
@@ -214,7 +214,7 @@ The key technology of these features are using `WebSocket` to implement.
 
     ![preview][preview-04]
 
-## Account setting
+## Account setting with FastDFS file upload
 
 1. Allow user to set username, phone number, tele number, address.
 2. Allow user to set new password.
@@ -229,7 +229,7 @@ The key technology of these features are using `FastDFS` to implement.
 
     ![preview][preview-05]
 
-## Menu Caching and Dynamic loading components
+## Menu caching with Redis and Vue dynamic loading components
 
 1. Enable redis caching for menu beacause this is the main entrence of every features and will being load many times.
 2. Apply Dynamic Loading to components to improve the performance.
@@ -266,14 +266,15 @@ The key technologies of these features are using `thymeleaf`, `Redis` and `Rabbi
 -   Fix email bugs
 -   replace Mybatis with Hibernate.
 
+[back to top]: #introduction
 [hrms]: ./hrms
 [hrms-vue]: ./hrms-vue
 [basic crud]: #basic-crud
-[login module]: #login-module
-[excel management]: #excel-management
-[online chat]: #online-chat
-[account setting]: #account-setting
-[menu caching and dynamic loading components]: #menu-caching-and-dynamic-loading-components
+[login module with springsecurity]: #login-module-with-springsecurity
+[excel management with poi and axios]: #excel-management-with-poi-and-axios
+[online chat with websocket]: #online-chat-with-websocket
+[account setting with fastdfs file upload]: #account-setting-with-fastdfs-file-upload
+[menu caching with redis and vue dynamic loading components]: #menu-caching-with-redis-and-vue-dynamic-loading-components
 [email module with redis and rabbitmq]: #email-module-with-redis-and-rabbitmq
 [preview-01]: https://github.com/lyzsk/support-repo/blob/master/human-resource-management-system/previews/add-new-employee.gif?raw=true
 [preview-02]: https://github.com/lyzsk/support-repo/blob/master/human-resource-management-system/previews/login-with-password-and-verifycode.gif?raw=true
