@@ -13,6 +13,7 @@ spring:
     database: MYSQL
     show-sql: true
     open-in-view: true
+  # 全局配置 java.util.Date 日期格式化, 如果使用的是 LocalDateTime + DateTimeFormatter 或者 @JsonFormat 局部更改, 则需要注释掉
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: UTC

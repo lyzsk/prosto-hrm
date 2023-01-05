@@ -129,6 +129,14 @@ public class Result<T> implements Serializable {
             null);
     }
 
+    public static <T> Result<T> error(IResultCode resultCode) {
+        return new Result<>(resultCode.getCode(), resultCode.getMessage(), null);
+    }
+
+    public static <T> Result<T> error(String message) {
+        return new Result<>(ResultCode.ERROR.getCode(), message, null);
+    }
+
     @Override
     public String toString() {
         return "Result{" + "code=" + code + ", message='" + message + '\'' + ", data=" + data + '}';

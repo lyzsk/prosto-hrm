@@ -43,4 +43,27 @@ This is the `v2.0` branch of `prosto-hrm` project
 2. update MySQL database desgin
 3. update from single company HRM system to multi companies HRM system (SaaS design)
 
+# Key features
+
+## Company Modules
+
+-   [ ] Dashboard
+-   [ ] Module Management
+-   [ ] External Link
+
+## HR Modules
+
+-   [ ] Dashboard
+-   [ ] Employees
+-   [ ] Attendence Management
+-   [ ] Salary Management
+-   [ ] Department Management
+-   [ ] Role Management
+-   [ ] Settings
+
+# LICENSE
+
+[MIT LICENSE] Copyright (c) 2022 lyzsk
+
+[mit license]: https://github.com/lyzsk/prosto-hrm/blob/master/LICENSE
 [back to top]: #introduction

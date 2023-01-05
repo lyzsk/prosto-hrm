@@ -30,7 +30,11 @@ public enum ResultCode implements IResultCode {
     /**
      * 服务器错误: 500
      */
-    Internal_Server_Error(404, "抱歉, 系统繁忙, 请稍后尝试!");
+    Internal_Server_Error(404, "抱歉, 系统繁忙, 请稍后尝试!"),
+    /**
+     * 未知错误: 999
+     */
+    ERROR(999, "未知错误!");
 
     private final int code;
     private final String message;
