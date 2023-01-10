@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: prosto-hrm-system
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/prosto_hrm?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    database: MYSQL
+    show-sql: true
+    open-in-view: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
+
+jwt:
+  tokenHeader: Authorization
+  secret: prosto-hrm-by-lyzsk-secret
+  expiration: 604800  # 60 * 60 * 24 * 7
+
+security:
+  ignored:
+    urls:
+      #      - /*
+      - /favicon.ico
+      - /login
+      - /register
+      - /lgout

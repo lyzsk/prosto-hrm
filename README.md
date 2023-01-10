@@ -45,21 +45,27 @@ This is the `v2.0` branch of `prosto-hrm` project
 
 # Key features
 
-## Company Modules
-
 -   [ ] Dashboard
--   [ ] Module Management
--   [ ] External Link
-
-## HR Modules
-
--   [ ] Dashboard
--   [ ] Employees
--   [ ] Attendence Management
+-   [ ] Employee Management
+    -   [ ] Employee Table
+    -   [ ] Rewards and Punishment
+    -   [ ] Train
+    -   [ ] Salary
+    -   [ ] Transfer
 -   [ ] Salary Management
+    -   [ ] Salary template
+    -   [ ] Adjust Salary
 -   [ ] Department Management
--   [ ] Role Management
+-   [ ] Job Title Management
+-   [ ] System Management
+    -   [ ] User Management
+    -   [ ] Log Management
+-   [ ] Data Analysis
+-   [ ] Profile
 -   [ ] Settings
+-   [ ] External Link
+-   [ ] Chat
+-   [ ] Email
 
 # LICENSE
 
