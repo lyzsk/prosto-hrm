@@ -43,43 +43,39 @@ public class SysUser implements Serializable {
      * 邮箱地址
      */
     private String email;
-
+    /**
+     * 电话区号
+     */
+    private String countryCode;
     /**
      * 电话号码
      */
     private String phone;
-
     /**
      * 用户头像
      */
     private String avatar;
-
     /**
      * 用户状态, 0: 禁用, 1: 启用
      * 默认值: 1
      */
     private Integer status;
-
     /**
      * 创建时间
      */
     private Date createTime;
-
     /**
      * 更新时间
      */
     private Date updateTime;
-
     /**
      * 创建人id
      */
     private Long createUser;
-
     /**
      * 更新人id
      */
     private Long updateUser;
-
     /**
      * 最近登录时间
      */
@@ -93,14 +89,15 @@ public class SysUser implements Serializable {
     public SysUser() {
     }
 
-    public SysUser(Long id, String username, String password, String name, String email, String phone, String avatar,
-        Integer status, Date createTime, Date updateTime, Long createUser, Long updateUser, Date lastLoginTime,
-        Integer isDeleted) {
+    public SysUser(Long id, String username, String password, String name, String email, String countryCode,
+        String phone, String avatar, Integer status, Date createTime, Date updateTime, Long createUser, Long updateUser,
+        Date lastLoginTime, Integer isDeleted) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.name = name;
         this.email = email;
+        this.countryCode = countryCode;
         this.phone = phone;
         this.avatar = avatar;
         this.status = status;
@@ -115,10 +112,10 @@ public class SysUser implements Serializable {
     @Override
     public String toString() {
         return "SysUser{" + "id=" + id + ", username='" + username + '\'' + ", password='" + password + '\''
-            + ", name='" + name + '\'' + ", email='" + email + '\'' + ", phone='" + phone + '\'' + ", avatar='" + avatar
-            + '\'' + ", status=" + status + ", createTime=" + createTime + ", updateTime=" + updateTime
-            + ", createUser=" + createUser + ", updateUser=" + updateUser + ", lastLoginTime=" + lastLoginTime
-            + ", isDeleted=" + isDeleted + '}';
+            + ", name='" + name + '\'' + ", email='" + email + '\'' + ", countryCode='" + countryCode + '\''
+            + ", phone='" + phone + '\'' + ", avatar='" + avatar + '\'' + ", status=" + status + ", createTime="
+            + createTime + ", updateTime=" + updateTime + ", createUser=" + createUser + ", updateUser=" + updateUser
+            + ", lastLoginTime=" + lastLoginTime + ", isDeleted=" + isDeleted + '}';
     }
 
     public Long getId() {
@@ -159,6 +156,14 @@ public class SysUser implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getPhone() {
@@ -232,4 +237,5 @@ public class SysUser implements Serializable {
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
     }
+
 }

@@ -1,9 +1,10 @@
 package cn.sichu.system;
 
+import cn.sichu.common.constant.Consts;
 import cn.sichu.model.SysUser;
 import cn.sichu.system.dto.SysUserParam;
 import cn.sichu.system.service.SysUserService;
-import com.github.javafaker.Faker;
+import com.mifmif.common.regex.Generex;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +23,16 @@ public class SysUserServiceTests {
 
     @Test
     public void testRegister() {
-        Faker faker = new Faker();
+        Generex generator = new Generex(Consts.CN_MOBILE);
         SysUserParam sysUserParam = new SysUserParam();
         sysUserParam.setUsername("admin");
         sysUserParam.setPassword("Admin123!");
         sysUserParam.setName("admin");
         sysUserParam.setEmail("admin@admin.com");
-        sysUserParam.setPhone("07700900911");
+        sysUserParam.setCountryCode(Consts.CN_CODE);
+        sysUserParam.setPhone(generator.random().substring(1, 12));
         SysUser sysUser = sysUserService.register(sysUserParam);
         System.out.println(sysUser);
     }
+
 }

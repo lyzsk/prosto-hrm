@@ -30,6 +30,7 @@
         <jjwt.version>0.9.1</jjwt.version>
         <hutool.version>5.8.9</hutool.version>
         <javafaker.version>1.0.2</javafaker.version>
+        <generex.version>1.0.2</generex.version>
     </properties>
 
     <dependencies>
@@ -37,6 +38,12 @@
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
             <version>${javafaker.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.mifmif</groupId>
+            <artifactId>generex</artifactId>
+            <version>${generex.version}</version>
         </dependency>
     </dependencies>
 </project>

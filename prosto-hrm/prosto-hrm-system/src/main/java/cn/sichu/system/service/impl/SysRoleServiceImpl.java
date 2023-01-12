@@ -11,6 +11,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 /**
  * @author sichu
  * @date 2023/01/09
@@ -29,7 +31,10 @@ public class SysRoleServiceImpl implements SysRoleService {
         BeanUtils.copyProperties(sysRoleParam, sysRole);
         Long id = idWorker.nextId();
         sysRole.setId(id);
+        sysRole.setCode("ROLE_" + sysRoleParam.getName().toUpperCase());
         sysRole.setStatus(Status.ENABLE);
+        sysRole.setCreateTime(new Date());
+        sysRole.setUpdateTime(new Date());
         sysRole.setIsDeleted(IsDeleted.NO);
         sysRoleDao.save(sysRole);
     }

@@ -2,6 +2,7 @@ package cn.sichu.system.controller;
 
 import cn.sichu.common.api.Result;
 import cn.sichu.model.SysUser;
+import cn.sichu.system.dto.SysUserLoginParam;
 import cn.sichu.system.dto.SysUserParam;
 import cn.sichu.system.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,15 @@ public class SysUserController {
             return Result.failed("注册失败!");
         }
         return Result.success(sysUser, "注册成功!");
+    }
+
+    @PostMapping(value = "/login")
+    public Result<String> login(@RequestBody SysUserLoginParam param) {
+        String token = sysUserService.login(param.getUsername(), param.getPassword());
+        if (token == null) {
+            return Result.failed("用户名或密码错误!");
+        }
+        return Result.success(token, "登录成功!");
     }
 
     /**

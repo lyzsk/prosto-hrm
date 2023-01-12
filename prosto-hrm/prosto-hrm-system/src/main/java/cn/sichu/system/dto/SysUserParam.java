@@ -2,7 +2,6 @@ package cn.sichu.system.dto;
 
 /**
  * SysUser 的 Dto, 用于用户注册
- * TODO: 加入 security 后 添加 Notblank 注解
  *
  * @author sichu
  * @date 2023/01/07
@@ -16,6 +15,8 @@ public class SysUserParam {
     private String name;
 
     private String email;
+
+    private String countryCode;
 
     private String phone;
 
@@ -49,6 +50,14 @@ public class SysUserParam {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     public String getPhone() {

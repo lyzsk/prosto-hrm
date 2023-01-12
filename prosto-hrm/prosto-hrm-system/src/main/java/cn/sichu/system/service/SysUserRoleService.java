@@ -12,19 +12,19 @@ public interface SysUserRoleService {
      *
      * @param param SysUserRoleRelationParam
      */
-    void addSysUserRoleRelation(SysUserRoleParam param);
+    void addSysUserRole(SysUserRoleParam param);
 
     /**
      * 根据 user id 删除 SysUserRoleRelation
      *
      * @param userId user id
      */
-    void deleteSysUserRoleRelationByUserId(Long userId);
+    void deleteSysUserRoleByUserId(Long userId);
 
     /**
      * 根据 role id 删除 SysUserRoleRelation
      *
      * @param roleId role id
      */
-    void deleteSysUserRoleRelationByRoleId(Long roleId);
+    void deleteSysUserRoleByRoleId(Long roleId);
 }

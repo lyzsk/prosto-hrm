@@ -2,6 +2,7 @@ package cn.sichu.system.service;
 
 import cn.sichu.model.SysUser;
 import cn.sichu.system.dto.SysUserParam;
+import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  * SysUserService 接口
@@ -27,6 +28,14 @@ public interface SysUserService {
     SysUser getSysUserByUsername(String username);
 
     /**
+     * 根据 username 获取 UserDetails 对象
+     *
+     * @param username username
+     * @return UserDetails
+     */
+    UserDetails loadUserByUsername(String username);
+
+    /**
      * 用户登录
      *
      * @param username username
@@ -34,6 +43,13 @@ public interface SysUserService {
      * @return token
      */
     String login(String username, String password);
+
+    /**
+     * 添加登录记录
+     *
+     * @param username username
+     */
+    void addLoginLog(String username);
 
     /**
      * 根据用户id获取用户

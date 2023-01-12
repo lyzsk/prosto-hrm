@@ -1,33 +1,30 @@
 package cn.sichu.system.dto;
 
 /**
- * SysRole 的 dto, 用于添加 Role
- *
  * @author sichu
- * @date 2023/01/09
+ * @date 2023/01/12
  **/
-public class SysRoleParam {
-    /**
-     * 角色名称
-     */
+public class SysPermissionParam {
+
     private String name;
 
-    /**
-     * 角色描述
-     */
     private String description;
 
-    public SysRoleParam() {
+    private String uri;
+
+    public SysPermissionParam() {
     }
 
-    public SysRoleParam(String name, String description) {
+    public SysPermissionParam(String name, String description, String uri) {
         this.name = name;
         this.description = description;
+        this.uri = uri;
     }
 
     @Override
     public String toString() {
-        return "SysRoleParam{" + "name='" + name + '\'' + ", description='" + description + '\'' + '}';
+        return "SysPermissionParam{" + "name='" + name + '\'' + ", description='" + description + '\'' + ", uri='" + uri
+            + '\'' + '}';
     }
 
     public String getName() {
@@ -44,5 +41,13 @@ public class SysRoleParam {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getUri() {
+        return uri;
+    }
+
+    public void setUri(String uri) {
+        this.uri = uri;
     }
 }

@@ -29,4 +29,4 @@ security:
       - /favicon.ico
       - /login
       - /register
-      - /lgout
+      - /logout
