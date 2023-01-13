@@ -8,6 +8,10 @@ import cn.sichu.system.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author sichu
  * @date 2023/01/07
@@ -33,12 +37,24 @@ public class SysUserController {
     }
 
     @PostMapping(value = "/login")
-    public Result<String> login(@RequestBody SysUserLoginParam param) {
+    public Result<Map<String, String>> login(@RequestBody SysUserLoginParam param) {
+        Map<String, String> map = new HashMap<>(1);
         String token = sysUserService.login(param.getUsername(), param.getPassword());
         if (token == null) {
             return Result.failed("用户名或密码错误!");
         }
-        return Result.success(token, "登录成功!");
+        map.put("token", token);
+        return Result.success(map, "登录成功!");
+    }
+
+    @GetMapping(value = "/info")
+    public Result<Map<String, String>> getInfo(HttpServletRequest request) {
+        String username = sysUserService.getUsernameByRequest(request);
+        SysUser sysUser = sysUserService.getSysUserByUsername(username);
+        Map<String, String> map = new HashMap<>(4);
+        map.put("name", sysUser.getName());
+        map.put("avatar", sysUser.getAvatar());
+        return Result.success(map, "获取用户信息成功!");
     }
 
     /**

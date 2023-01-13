@@ -2,11 +2,14 @@ package cn.sichu.security.utils;
 
 import cn.sichu.common.exception.GlobalException;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.StringUtils;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -106,6 +109,22 @@ public class JwtTokenUtil {
     public boolean validateToken(String token, UserDetails userDetails) {
         String username = getUsernameFromToken(token);
         return username.equals(userDetails.getUsername());
+    }
+
+    /**
+     * 根据 httpServletRequest 获取 username
+     *
+     * @param request httpServletRequest
+     * @return username
+     */
+    public String getUsernameFromRequest(HttpServletRequest request) {
+        String token = request.getParameter("token");
+        if (StringUtils.isEmpty(token)) {
+            return "";
+        }
+        Jws<Claims> claimsJws = Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+        Claims claims = claimsJws.getBody();
+        return (String)claims.get("sub");
     }
 
     /**

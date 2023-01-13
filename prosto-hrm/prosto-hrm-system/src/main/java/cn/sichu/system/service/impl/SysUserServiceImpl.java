@@ -17,6 +17,7 @@ import cn.sichu.system.dto.SysUserParam;
 import cn.sichu.system.service.SysUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -60,6 +61,9 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Autowired
     private SysRoleDao sysRoleDao;
+
+    @Value("${jwt.secret}")
+    private String secret;
 
     @Override
     public SysUser register(SysUserParam param) {
@@ -143,6 +147,11 @@ public class SysUserServiceImpl implements SysUserService {
         HttpServletRequest request = attributes.getRequest();
         loginLog.setIp(RequestUtil.getRequestIp(request));
         sysUserLoginLogDao.save(loginLog);
+    }
+
+    @Override
+    public String getUsernameByRequest(HttpServletRequest request) {
+        return jwtTokenUtil.getUsernameFromRequest(request);
     }
 
     @Override

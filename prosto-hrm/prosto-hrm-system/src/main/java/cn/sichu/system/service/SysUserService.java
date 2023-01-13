@@ -4,6 +4,8 @@ import cn.sichu.model.SysUser;
 import cn.sichu.system.dto.SysUserParam;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * SysUserService 接口
  *
@@ -50,6 +52,14 @@ public interface SysUserService {
      * @param username username
      */
     void addLoginLog(String username);
+
+    /**
+     * 根据 httpServletRequest 获取 username
+     *
+     * @param request httpServletRequest
+     * @return username
+     */
+    String getUsernameByRequest(HttpServletRequest request);
 
     /**
      * 根据用户id获取用户
