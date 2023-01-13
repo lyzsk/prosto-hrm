@@ -51,10 +51,18 @@ public class SysUserController {
     public Result<Map<String, String>> getInfo(HttpServletRequest request) {
         String username = sysUserService.getUsernameByRequest(request);
         SysUser sysUser = sysUserService.getSysUserByUsername(username);
-        Map<String, String> map = new HashMap<>(4);
+        Map<String, String> map = new HashMap<>(5);
+        map.put("id", sysUser.getId().toString());
+        map.put("username", sysUser.getUsername());
         map.put("name", sysUser.getName());
         map.put("avatar", sysUser.getAvatar());
+        map.put("status", sysUser.getStatus().toString());
         return Result.success(map, "获取用户信息成功!");
+    }
+
+    @PostMapping(value = "/logout")
+    public Result<String> logout(HttpServletRequest request) {
+        return Result.success("success", "登出成功!");
     }
 
     /**

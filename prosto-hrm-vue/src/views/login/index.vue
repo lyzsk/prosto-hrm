@@ -67,6 +67,7 @@
 
 <script>
 import { validUsername } from "@/utils/validate";
+import { loginApi } from "@/api/user";
 
 export default {
   name: "Login",
@@ -136,7 +137,9 @@ export default {
               this.loading = false;
             });
         } else {
-          console.log("error submit!!");
+          this.$message.error(res.msg);
+          this.loading = false;
+          // console.log("error submit!!");
           return false;
         }
       });

@@ -1,7 +1,7 @@
 import Cookies from "js-cookie";
 
 // const TokenKey = 'vue_admin_template_token'
-const TokenKey = "Authorization";
+const TokenKey = "prosto_hrm_token";
 
 export function getToken() {
   return Cookies.get(TokenKey);
