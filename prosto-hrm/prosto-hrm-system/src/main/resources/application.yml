@@ -26,6 +26,7 @@ security:
   ignored:
     urls:
       - /*
+      - /**/*
 #      - /favicon.ico
 #      - /login
 #      - /vue-admin-template/user/info.*

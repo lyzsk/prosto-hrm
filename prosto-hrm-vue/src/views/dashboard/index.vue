@@ -3,7 +3,9 @@
     <div class="dashboard-text">id: {{ id }}</div>
     <div class="dashboard-text">name: {{ name }}</div>
     <div class="dashboard-text">username: {{ username }}</div>
-    <div class="dashboard-text">status: {{ status }}</div>
+    <div class="dashboard-text">
+      status: {{ this.$store.state.user.status }}
+    </div>
   </div>
 </template>
 

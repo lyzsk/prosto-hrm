@@ -1,6 +1,7 @@
 import { login, logout, getInfo } from "@/api/user";
 import { getToken, setToken, removeToken } from "@/utils/auth";
 import { resetRouter } from "@/router";
+import { Message } from "element-ui";
 
 const getDefaultState = () => {
   return {
@@ -48,7 +49,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       login({ username: username.trim(), password: password })
         .then((response) => {
-          const { data } = response;
+          const data = response.data;
           commit("SET_TOKEN", data.token);
           setToken(data.token);
           resolve();

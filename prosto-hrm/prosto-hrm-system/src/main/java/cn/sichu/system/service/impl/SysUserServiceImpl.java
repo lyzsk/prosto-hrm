@@ -18,6 +18,10 @@ import cn.sichu.system.service.SysUserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -152,6 +156,12 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public String getUsernameByRequest(HttpServletRequest request) {
         return jwtTokenUtil.getUsernameFromRequest(request);
+    }
+
+    @Override
+    public Page<SysUser> getSysUserList(int pageNumber, int pageSize) {
+        Pageable page = PageRequest.of(pageNumber, pageSize);
+        return sysUserDao.findAll(page);
     }
 
     @Override

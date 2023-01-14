@@ -2,6 +2,8 @@ package cn.sichu.system.service;
 
 import cn.sichu.model.SysUser;
 import cn.sichu.system.dto.SysUserParam;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.servlet.http.HttpServletRequest;
@@ -60,6 +62,14 @@ public interface SysUserService {
      * @return username
      */
     String getUsernameByRequest(HttpServletRequest request);
+
+    /**
+     * 根据 pageNumber, pageSize 查询 Page 对象
+     * @param pageNumber pageNumber
+     * @param pageSize pageSize
+     * @return Page
+     */
+    Page<SysUser> getSysUserList(int pageNumber, int pageSize);
 
     /**
      * 根据用户id获取用户

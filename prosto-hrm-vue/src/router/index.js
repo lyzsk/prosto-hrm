@@ -93,62 +93,26 @@ export const constantRoutes = [
   },
 
   {
-    path: "/nested",
+    path: "/sys",
     component: Layout,
-    redirect: "/nested/menu1",
-    name: "Nested",
+    redirect: "/sys",
+    name: "System",
     meta: {
-      title: "Settings",
+      title: "System",
       icon: "nested",
     },
     children: [
       {
-        path: "menu1",
-        component: () => import("@/views/nested/menu1/index"), // Parent router-view
-        name: "Menu1",
-        meta: { title: "Menu1" },
-        children: [
-          {
-            path: "menu1-1",
-            component: () => import("@/views/nested/menu1/menu1-1"),
-            name: "Menu1-1",
-            meta: { title: "Menu1-1" },
-          },
-          {
-            path: "menu1-2",
-            component: () => import("@/views/nested/menu1/menu1-2"),
-            name: "Menu1-2",
-            meta: { title: "Menu1-2" },
-            children: [
-              {
-                path: "menu1-2-1",
-                component: () =>
-                  import("@/views/nested/menu1/menu1-2/menu1-2-1"),
-                name: "Menu1-2-1",
-                meta: { title: "Menu1-2-1" },
-              },
-              {
-                path: "menu1-2-2",
-                component: () =>
-                  import("@/views/nested/menu1/menu1-2/menu1-2-2"),
-                name: "Menu1-2-2",
-                meta: { title: "Menu1-2-2" },
-              },
-            ],
-          },
-          {
-            path: "menu1-3",
-            component: () => import("@/views/nested/menu1/menu1-3"),
-            name: "Menu1-3",
-            meta: { title: "Menu1-3" },
-          },
-        ],
+        path: "/sys/users",
+        component: () => import("@/views/system/systemUsers"),
+        name: "Users",
+        meta: { title: "Users", icon: "bug" },
       },
       {
-        path: "menu2",
-        component: () => import("@/views/nested/menu2/index"),
-        name: "Menu2",
-        meta: { title: "menu2" },
+        path: "/sys/roles",
+        component: () => import("@/views/system/systemUsers"),
+        name: "Roles",
+        meta: { title: "Roles", icon: "theme" },
       },
     ],
   },
