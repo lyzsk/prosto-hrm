@@ -20,6 +20,7 @@ service.interceptors.request.use(
       // please modify it according to the actual situation
       config.headers["Authorization"] = getToken();
     }
+    console.log(config);
     return config;
   },
   (error) => {

@@ -98,7 +98,6 @@ export default {
     return {
       currentPage: 1,
       pageSize: 5,
-      pageNumber: 1,
       total: 10,
       tableData: [],
       listLoading: true,
@@ -113,7 +112,7 @@ export default {
     fetchData() {
       this.listLoading = true;
       getList({
-        pageNumber: this.pageNumber,
+        pageNumber: this.currentPage,
         pageSize: this.pageSize,
       }).then((response) => {
         const data = response.data;

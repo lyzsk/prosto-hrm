@@ -8,7 +8,6 @@ import cn.sichu.system.dto.SysUserParam;
 import cn.sichu.system.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -65,6 +64,7 @@ public class SysUserController {
 
     /**
      * TODO: 没成功...
+     *
      * @param request HttpServletRequest
      * @return Result
      */
@@ -74,9 +74,9 @@ public class SysUserController {
     }
 
     @GetMapping(value = "/sys/users")
-    public Result<PageResult<SysUser>> getUsersList(HttpServletRequest request) {
-        int pageNumber = ServletRequestUtils.getIntParameter(request, "pageNumber", 0);
-        int pageSize = ServletRequestUtils.getIntParameter(request, "pageSize", 5);
+    public Result<PageResult<SysUser>> getUsersList(
+        @RequestParam(value = "pageNumber", defaultValue = "1") int pageNumber,
+        @RequestParam(value = "pageSize", defaultValue = "5") int pageSize) {
         Page<SysUser> page = sysUserService.getSysUserList(pageNumber - 1, pageSize);
         return Result.success(PageResult.resultPage(page), "获取用户列表成功!");
     }
