@@ -3,7 +3,6 @@ package cn.sichu.system.service;
 import cn.sichu.model.SysUser;
 import cn.sichu.system.dto.SysUserParam;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Sort;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.servlet.http.HttpServletRequest;

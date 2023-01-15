@@ -31,6 +31,8 @@
         <hutool.version>5.8.9</hutool.version>
         <javafaker.version>1.0.2</javafaker.version>
         <generex.version>1.0.2</generex.version>
+        <pagehelper.version>5.3.2</pagehelper.version>
+        <jackson-annotations.version>2.14.1</jackson-annotations.version>
     </properties>
 
     <dependencies>
@@ -44,6 +46,13 @@
             <groupId>com.github.mifmif</groupId>
             <artifactId>generex</artifactId>
             <version>${generex.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>${jackson-annotations.version}</version>
         </dependency>
     </dependencies>
 </project>

@@ -117,8 +117,9 @@ export default {
         pageSize: this.pageSize,
       }).then((response) => {
         const data = response.data;
-        this.tableData = data.content;
-        this.total = data.totalElements;
+        console.log(data);
+        this.tableData = data.list;
+        this.total = data.total;
         this.listLoading = false;
       });
     },

@@ -1,6 +1,6 @@
 package cn.sichu.system.controller;
 
-import cn.hutool.json.JSONObject;
+import cn.sichu.common.api.PageResult;
 import cn.sichu.common.api.Result;
 import cn.sichu.model.SysUser;
 import cn.sichu.system.dto.SysUserLoginParam;
@@ -8,13 +8,11 @@ import cn.sichu.system.dto.SysUserParam;
 import cn.sichu.system.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -76,11 +74,11 @@ public class SysUserController {
     }
 
     @GetMapping(value = "/sys/users")
-    public Result<Page<SysUser>> getUsersList(HttpServletRequest request) {
+    public Result<PageResult<SysUser>> getUsersList(HttpServletRequest request) {
         int pageNumber = ServletRequestUtils.getIntParameter(request, "pageNumber", 0);
         int pageSize = ServletRequestUtils.getIntParameter(request, "pageSize", 5);
         Page<SysUser> page = sysUserService.getSysUserList(pageNumber - 1, pageSize);
-        return Result.success(page, "获取用户列表成功!");
+        return Result.success(PageResult.resultPage(page), "获取用户列表成功!");
     }
 
     /**

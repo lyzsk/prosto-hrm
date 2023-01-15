@@ -1,5 +1,6 @@
 package cn.sichu.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
@@ -32,6 +33,7 @@ public class SysUser implements Serializable {
     /**
      * 密码
      */
+    @JsonIgnore
     private String password;
 
     /**
