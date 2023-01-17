@@ -1,5 +1,13 @@
 server:
-  port: 8081
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
 
 spring:
   application:
@@ -16,19 +24,14 @@ spring:
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: UTC
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
 
-jwt:
-  tokenHeader: Authorization
-  secret: prosto-hrm-by-lyzsk-secret
-  expiration: 604800  # 60 * 60 * 24 * 7
-
-security:
-  ignored:
-    urls:
-      - /*
-      - /**/*
-#      - /favicon.ico
-#      - /login
-#      - /vue-admin-template/user/info.*
-#      - /register
-#      - /logout
+feign:
+  okhttp:
+    enabled: true
+  httpclient:
+    enabled: false

@@ -7,15 +7,16 @@
  * @returns {Boolean}
  */
 export function isExternal(path) {
-  return /^(https?:|mailto:|tel:)/.test(path);
+    return /^(https?:|mailto:|tel:)/.test(path);
 }
 
 /**
- * @param {string} str
+ * @param {string} username
  * @returns {Boolean}
  */
-export function validUsername(str) {
-  // const valid_map = ['admin', 'editor']
-  // return valid_map.indexOf(str.trim()) >= 0
-  return true;
+export function validUsername(username) {
+    // valid characters: a-z, A-Z, 0-9, _, ., @
+    const res = /^[a-zA-Z0-9_\.\@]+$/.exec(username);
+    const valid = !!res;
+    return valid;
 }

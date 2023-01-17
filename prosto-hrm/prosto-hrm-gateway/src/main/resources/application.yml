@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8081/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+
+spring:
+  application:
+    name: prosto-hrm-gateway
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+  main:
+    allow-bean-definition-overriding: true
+
+zuul:
+  routes:
+    prosto-hrm-system:
+      path: /system/**
+      #      url: http://127.0.0.1:8083
+      serviceId: prosto-hrm-system
+      stripPrefix: false
