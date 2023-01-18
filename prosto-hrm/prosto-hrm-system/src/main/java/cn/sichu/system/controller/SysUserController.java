@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
  * @author sichu
  * @date 2023/01/17
  **/
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/sys")
 public class SysUserController {

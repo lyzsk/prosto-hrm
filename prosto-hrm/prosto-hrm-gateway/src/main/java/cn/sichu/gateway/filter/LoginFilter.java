@@ -114,7 +114,7 @@ public class LoginFilter extends ZuulFilter {
                 Date expTime = calendar.getTime();
                 // response body 添加 token
                 String token = jwtUtil.generateToken(expTime, jwtClaims);
-                result.getData().put(Consts.JWT_HEADER, token);
+                result.getData().put("token", token);
                 log.info("登陆后返回的json型result: {}", result);
                 // 序列化 response body json
                 body = objectMapper.writeValueAsString(result);

@@ -1,7 +1,6 @@
 package cn.sichu.gateway.filter;
 
 import cn.sichu.common.api.Result;
-import cn.sichu.common.constant.Consts;
 import cn.sichu.gateway.config.AuthFilterConfig;
 import cn.sichu.gateway.utils.JwtUtil;
 import cn.sichu.gateway.utils.PathUtil;
@@ -17,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.netflix.zuul.filters.support.FilterConstants;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.nio.charset.StandardCharsets;
@@ -87,15 +87,23 @@ public class JwtAuthFilter extends ZuulFilter {
     public Object run() throws ZuulException {
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        String token = request.getHeader(Consts.JWT_HEADER);
+        // String token = request.getHeader(Consts.JWT_HEADER);
+        String token = "";
+        Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if ("token".equals(cookie.getName())) {
+                token = cookie.getValue();
+            }
+        }
         Claims claims;
         try {
             claims = jwtUtil.parseToken(token);
             log.info("token验证通过");
             // 对请求进行路由
             ctx.setSendZuulResponse(true);
+            Long id = (Long)claims.get("id");
             // 请求头加入user id, 传给业务服务
-            ctx.addZuulRequestHeader("id", claims.get("id").toString());
+            ctx.addZuulRequestHeader("id", id.toString());
         } catch (ExpiredJwtException expiredJwtException) {
             log.error("token过期");
             // token过期, 不对请求进行路由
