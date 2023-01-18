@@ -6,6 +6,10 @@ package cn.sichu.common.constant;
  **/
 public class Consts {
 
+    public static final String JWT_HEADER = "Authorization";
+
+    public static final String JWT_PREFIX = "Bearer ";
+
     public static final String CN_CODE = "+86";
 
     public static final String CN_MOBILE =

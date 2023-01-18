@@ -6,7 +6,7 @@ package cn.sichu.system.dto;
  * @author sichu
  * @date 2023/01/16
  **/
-public class SysUserParam {
+public class SysUserRegisterParam {
     private String username;
 
     private String password;

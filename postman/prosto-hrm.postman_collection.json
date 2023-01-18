@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "2313ea50-127e-4d64-b715-1d34b949da5b",
+		"name": "prosto-hrm",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20958494"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/sys/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hello",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NzQ2MjM0NDgsImlhdCI6MTY3NDAxODY0OCwiaWQiOjYyMjcxNTQyMTE3NDU3OTJ9.5eDBA7Ds8STNZxIvvaXdThF_FmeONl2rpuysYVOtUr0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/sys/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"sys",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

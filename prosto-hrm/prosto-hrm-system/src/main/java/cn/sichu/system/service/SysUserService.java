@@ -1,7 +1,7 @@
 package cn.sichu.system.service;
 
 import cn.sichu.model.SysUser;
-import cn.sichu.system.dto.SysUserParam;
+import cn.sichu.system.dto.SysUserRegisterParam;
 
 /**
  * @author sichu
@@ -9,12 +9,21 @@ import cn.sichu.system.dto.SysUserParam;
  **/
 public interface SysUserService {
     /**
+     * 根据 username, password 登录
+     *
+     * @param username username
+     * @param password password
+     * @return 1: 成功, 0: 失败
+     */
+    int login(String username, String password);
+
+    /**
      * 根据 SysUserParam 注册
      *
      * @param param SysUserParam
      * @return 1: 成功, 0: 失败
      */
-    int register(SysUserParam param);
+    int register(SysUserRegisterParam param);
 
     /**
      * 根据 username 获取 SysUser 对象

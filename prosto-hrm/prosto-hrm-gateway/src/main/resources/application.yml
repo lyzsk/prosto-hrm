@@ -12,6 +12,9 @@ eureka:
 spring:
   application:
     name: prosto-hrm-gateway
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
   redis:
     database: 0
     host: 127.0.0.1
@@ -23,7 +26,14 @@ spring:
 zuul:
   routes:
     prosto-hrm-system:
-      path: /system/**
-      #      url: http://127.0.0.1:8083
+      path: /sys/**
       serviceId: prosto-hrm-system
       stripPrefix: false
+      sentiviteHeaders:   #　将指定路由的敏感头设置为空
+      customSensitiveHeaders: true #　对指定路由开启自定义敏感头
+
+auth-filter:
+  authUrls: # 需要验证token的请求地址, 会触发JwtAuthFilter, 验证token
+    - /sys/hello/**
+  loginUrls: # 登录请求地址, 会触发LoginFilter, 生成token
+    - /sys/login/**
