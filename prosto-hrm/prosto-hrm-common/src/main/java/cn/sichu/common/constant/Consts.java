@@ -14,4 +14,10 @@ public class Consts {
     public static final String UK_CODE = "+44";
 
     public static final String UK_MOBILE = "^07\\d{9}$";
+
+    public static final String DEFAULT_AVATAR = "https://avatars.githubusercontent.com/u/88008847?v=4";
+
+    public static final String AUTHORIZATION_HEADER = "Authorization";
+
+    public static final String BEARER_PREFIX = "Bearer ";
 }

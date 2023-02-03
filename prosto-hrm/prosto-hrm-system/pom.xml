@@ -26,14 +26,13 @@
 
         <dependency>
             <groupId>cn.sichu</groupId>
-            <artifactId>prosto-hrm-security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <artifactId>prosto-hrm-model</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>cn.sichu</groupId>
-            <artifactId>prosto-hrm-model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
         <dependency>
@@ -57,7 +56,15 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>com.github.mifmif</groupId>
+            <artifactId>generex</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

@@ -44,9 +44,24 @@ public class SysPermission {
     private String description;
 
     /**
-     * 权限uri路径
+     * 允许访问的uri路径
      */
     private String uri;
+
+    /**
+     * 组件
+     */
+    private String component;
+
+    /**
+     * 图标
+     */
+    private String icon;
+
+    /**
+     * 类型, 0: 目录, 1: 菜单, 2: 按钮
+     */
+    private Integer type;
 
     /**
      * 创建时间
@@ -59,12 +74,12 @@ public class SysPermission {
     private Date updateTime;
 
     /**
-     * 创建人id
+     * 创建人
      */
     private Long createUser;
 
     /**
-     * 更新人id
+     * 更新人
      */
     private Long updateUser;
 
@@ -77,13 +92,17 @@ public class SysPermission {
     }
 
     public SysPermission(Long id, Long parentId, String code, String name, String description, String uri,
-        Date createTime, Date updateTime, Long createUser, Long updateUser, Integer isDeleted) {
+        String component, String icon, Integer type, Date createTime, Date updateTime, Long createUser, Long updateUser,
+        Integer isDeleted) {
         this.id = id;
         this.parentId = parentId;
         this.code = code;
         this.name = name;
         this.description = description;
         this.uri = uri;
+        this.component = component;
+        this.icon = icon;
+        this.type = type;
         this.createTime = createTime;
         this.updateTime = updateTime;
         this.createUser = createUser;
@@ -94,9 +113,10 @@ public class SysPermission {
     @Override
     public String toString() {
         return "SysPermission{" + "id=" + id + ", parentId=" + parentId + ", code='" + code + '\'' + ", name='" + name
-            + '\'' + ", description='" + description + '\'' + ", uri='" + uri + '\'' + ", createTime=" + createTime
-            + ", updateTime=" + updateTime + ", createUser=" + createUser + ", updateUser=" + updateUser
-            + ", isDeleted=" + isDeleted + '}';
+            + '\'' + ", description='" + description + '\'' + ", uri='" + uri + '\'' + ", component='" + component
+            + '\'' + ", icon='" + icon + '\'' + ", type=" + type + ", createTime=" + createTime + ", updateTime="
+            + updateTime + ", createUser=" + createUser + ", updateUser=" + updateUser + ", isDeleted=" + isDeleted
+            + '}';
     }
 
     public Long getId() {
@@ -145,6 +165,30 @@ public class SysPermission {
 
     public void setUri(String uri) {
         this.uri = uri;
+    }
+
+    public String getComponent() {
+        return component;
+    }
+
+    public void setComponent(String component) {
+        this.component = component;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
     }
 
     public Date getCreateTime() {

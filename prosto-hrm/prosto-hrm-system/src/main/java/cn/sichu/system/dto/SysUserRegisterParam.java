@@ -1,13 +1,12 @@
 package cn.sichu.system.dto;
 
 /**
- * SysUser 的 Dto, 用于用户注册
+ * 用于用户注册的 DTO
  *
  * @author sichu
- * @date 2023/01/07
+ * @date 2023/01/16
  **/
-public class SysUserParam {
-
+public class SysUserRegisterParam {
     private String username;
 
     private String password;
@@ -19,6 +18,8 @@ public class SysUserParam {
     private String countryCode;
 
     private String phone;
+
+    private String avatar;
 
     public String getUsername() {
         return username;
@@ -66,5 +67,13 @@ public class SysUserParam {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

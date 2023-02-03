@@ -4,7 +4,7 @@ package cn.sichu.system.dto;
  * 用户登录dto
  *
  * @author sichu
- * @date 2023/01/11
+ * @date 2023/01/18
  **/
 public class SysUserLoginParam {
     private String username;
